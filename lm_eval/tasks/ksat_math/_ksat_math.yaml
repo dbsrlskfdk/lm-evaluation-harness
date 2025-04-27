@@ -1,0 +1,8 @@
+group: ksat_math
+task:
+  - ksat_math_2025_calculus
+aggregate_metric_list:
+  - metric: acc
+    agregation: mean
+metadata:
+  version: 1.0
