@@ -1,8 +1,14 @@
 dataset_path: Quadyun/Korean_SAT_MATH
 test_split: test 
-output_type:
-doc_to_text: "{{question}}\n\n{% if choices %}{% for i in range(choices | length) %}{{i}}. {{choices[i]}}\n{% endfor %}{% endif %}"
+output_type: generate_until
+doc_to_text: "{{question}}\n\n{% if choices %}{% for i in range(choices | length) %}{{i+1}}. {{choices[i]}}\n{% endfor %}{% endif %}"
 doc_to_target: "{{answer}}"
+generation_kwargs:
+  until:
+    - "</s>"
+    - "<|im_end|>"
+  do_sample: false
+  temperature: 0.0
 metric_list:
   - metric: exact_match
     aggregation: mean
