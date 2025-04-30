@@ -21,6 +21,7 @@ filter_list:
       - function: "regex"
         regex_pattern: 'boxed\{((?:[^\{\}]*|\{(?:[^\{\}]*|\{.*?\})*\})*)\}'
 # regex_pattern: "oxed{(.*?)}"
+	  - function: "remove_whitespace"
       - function: "take_first"
 metadata:
   version: 1.0
