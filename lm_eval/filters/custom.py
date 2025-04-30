@@ -26,8 +26,8 @@ class RemoveWhitespaceFilter(Filter):
     def __init__(self, **kwargs) -> None:
         super().__init__(**kwargs)
 
-    def apply(self, resps, docs):
-        def remove_whitespace(resp):
-            return "".join(resp.split())
+    def apply(self, resps: list[list[str]], docs):
+        def remove_whitespace(resps):
+            return ["".join(resp.split()) for resp in resps]
 
-        return map(lambda r: [remove_whitespace(r)], resps)
+        return list(map(lambda x: remove_whitespace(x), resps))
