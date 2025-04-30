@@ -8,6 +8,7 @@ task:
 aggregate_metric_list:
   - metric: exact_match
     aggregation: mean
-    
+    filter_list: strict-match
+
 metadata:
   version: 1.1
