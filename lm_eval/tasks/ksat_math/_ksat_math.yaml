@@ -1,8 +1,14 @@
 group: ksat_math
 task:
   - ksat_math_2025_calculus
+  - ksat_math_2024_calculus
+  - ksat_math_2023_calculus
+  - ksat_math_2022_calculus
+
 aggregate_metric_list:
-  - metric: acc
+  - metric: exact_match
     agregation: mean
+    higher_is_better: true
+
 metadata:
-  version: 1.0
+  version: 1.1
