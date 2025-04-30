@@ -7,7 +7,7 @@ task:
 
 aggregate_metric_list:
   - metric: exact_match
-    agregation: mean
+    aggregation: mean
     higher_is_better: true
 
 metadata:
