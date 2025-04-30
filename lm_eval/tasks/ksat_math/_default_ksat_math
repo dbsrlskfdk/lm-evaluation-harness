@@ -20,7 +20,7 @@ filter_list:
     filter:
       - function: "regex"
         regex_pattern: 'boxed\{((?:[^\{\}]*|\{(?:[^\{\}]*|\{.*?\})*\})*)\}'
-      - function: "remove_whitespace"
+      - function: "remove_inter_whitespace"
       - function: "take_first"
 metadata:
   version: 1.0

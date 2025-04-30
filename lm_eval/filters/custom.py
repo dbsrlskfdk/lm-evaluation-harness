@@ -17,7 +17,7 @@ class CustomFilter(Filter):
         return self.filter_fn(resps, docs)
 
 
-@register_filter("remove_whitespace")
+@register_filter("remove_inter_whitespace")
 class RemoveWhitespaceFilter(Filter):
     """
     Filter that removes leading and trailing whitespace from the model responses.
