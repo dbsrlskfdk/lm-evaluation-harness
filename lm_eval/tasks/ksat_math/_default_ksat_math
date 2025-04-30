@@ -1,7 +1,9 @@
 dataset_path: Quadyun/Korean_SAT_MATH
 test_split: test 
 output_type: generate_until
-doc_to_text: "{{question}}\n\n{% if choices %}{% for i in range(choices | length) %}{{i+1}}. {{choices[i]}}\n{% endfor %}{% endif %}"
+# Multiple Choice Format
+# doc_to_text: "{{question}}\n\n{% if choices %}{% for i in range(choices | length) %}{{i}}. {{choices[i]}}\n{% endfor %}{% endif %}"
+doc_to_text: "{{question}}"
 doc_to_target: "{{answer}}"
 generation_kwargs:
   until:
@@ -18,7 +20,7 @@ filter_list:
     filter:
       - function: "regex"
         regex_pattern: "boxed\{((?:[^\{\}]*|\{(?:[^\{\}]*|\{.*?\})*\})*)\}"
-#regex_pattern: "oxed{(.*?)}"
+		#regex_pattern: "oxed{(.*?)}"
       - function: "take_first"
 metadata:
   version: 1.0
